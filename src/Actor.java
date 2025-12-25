@@ -23,17 +23,16 @@ public class Actor extends Person{
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
+        if (!super.equals(o)) return false;
+
         if (!(o instanceof Actor actor)) return false;
-        return Objects.equals(getName(), actor.getName()) &&
-                Objects.equals(getSurname(), actor.getSurname()) &&
-                getGender().equals(actor.getGender()) &&
-                Double.compare(getHeight(), actor.getHeight()) == 0;
+
+        return Double.compare(getHeight(), actor.getHeight()) == 0;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), getSurname(), getGender(), getHeight());
+        return Objects.hash(getHeight());
     }
 
 }
