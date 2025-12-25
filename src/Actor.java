@@ -32,7 +32,7 @@ public class Actor extends Person{
 
     @Override
     public int hashCode() {
-        return Objects.hash(getHeight());
+        return  Objects.hash(super.hashCode(), getHeight());
     }
 
 }
